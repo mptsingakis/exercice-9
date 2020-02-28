@@ -62,7 +62,8 @@ wp_reset_postdata();
 
 $args2 = array(
     "category_name" => "evenements",
-    "posts_per_page"=> 10
+    "posts_per_page"=> 10,
+
 );
 $query2 = new WP_Query( $args2 );
  
@@ -71,6 +72,7 @@ while ( $query2->have_posts() ) {
     $query2->the_post();
     echo '<h2>' . get_the_title( $query2->post->ID ) . '</h2>';
     echo '<p>' . SUBSTR(get_the_excerpt(),0,300) . '</p>';
+    the_post_thumbnail( 'thumbnail' );  
 }
  
 // Restore original Post Data
