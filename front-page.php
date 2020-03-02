@@ -12,6 +12,27 @@
  * @package underscores
  */
 
+
+$args2 = array(
+    "category_name" => "conference",
+    "posts_per_page"=> 10,
+);
+
+$query2 = new WP_Query( $args2 );
+ 
+
+
+// The Query
+$args = array(
+    "category_name" => "nouvelle",
+    "posts_per_page" => 3, //afficher les 3 derniere nouvelles "posts_per_page" => "3"
+   // "orderby" =>"date",
+   // "order" => "ASC"
+);
+
+$query1 = new WP_Query( $args );
+ 
+
 get_header();
 ?>
 	<div id="primary" class="content-area">
@@ -30,53 +51,34 @@ get_header();
 
         endwhile; // End of the loop.
  //////////////////////////////////////////////// Nouvelles ////////////////////////
- echo '<h2> '.category_description( get_category_by_slug( 'conference' ) ). '<h2>'   ;
-/* The 2nd Query (without global var) */
-
-$args2 = array(
-    "category_name" => "conference",
-    "posts_per_page"=> 10,
-);
-
-$query2 = new WP_Query( $args2 );
+ echo '<h4> '.category_description( get_category_by_slug( 'conference' ) ). '<h4>'   ;
+ /* The 2nd Query (without global var) */
  
 // The 2nd Loop
 while ( $query2->have_posts() ) {
     $query2->the_post();
    
-    echo '<h2>' . get_the_title( $query2->post->ID ) . '</h2>';
+    echo '<h4>' . get_the_title( $query2->post->ID ) . '</h4>';
     echo '<p>' . SUBSTR(get_the_excerpt(),0,300) . '</p>';
+    echo '<p>' . get_the_date('j') . '</p>';
+    echo '<p>' . get_the_date('m') . '</p>';
+    echo '<p>' . get_the_date('y') . '</p>';
     the_post_thumbnail( 'thumbnail' );  
+    
 }
  
 // Restore original Post Data
 wp_reset_postdata();
 
- 
- echo '<h2> '.category_description( get_category_by_slug( 'nouvelle' ) ). '<h2>'   ;
-// The Query
-$args = array(
-    "category_name" => "nouvelle",
-    "posts_per_page" => 3, //afficher les 3 derniere nouvelles "posts_per_page" => "3"
-   // "orderby" =>"date",
-   // "order" => "ASC"
-);
-
-$query1 = new WP_Query( $args );
+echo '<h2> '.category_description( get_category_by_slug( 'nouvelle' ) ). '<h2>'   ;
  
 // The Loop
 while ( $query1->have_posts() ) {
     $query1->the_post();
-    echo '<h2>' . get_the_title() . '</h2>';
+    echo '<h4>' . get_the_title() . '</h4>';
     the_post_thumbnail( 'thumbnail' );  
 }
  
-/* Restore original Post Data 
- * NB: Because we are using new WP_Query we aren't stomping on the 
- * original $wp_query and it does not need to be reset with 
- * wp_reset_query(). We just need to set the post data back up with
- * wp_reset_postdata().
- */
 wp_reset_postdata();
  
 
