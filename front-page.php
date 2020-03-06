@@ -12,10 +12,16 @@
  * @package underscores
  */
 
+$args3 = array(
+    "category_name" => "evenements",
+    "posts_per_page"=> -1,
+);
+
+$query3 = new WP_Query( $args3 );
 
 $args2 = array(
     "category_name" => "conference",
-    "posts_per_page"=> 10,
+    "posts_per_page"=> 5,
 );
 
 $query2 = new WP_Query( $args2 );
@@ -25,7 +31,7 @@ $query2 = new WP_Query( $args2 );
 // The Query
 $args = array(
     "category_name" => "nouvelle",
-    "posts_per_page" => 3, //afficher les 3 derniere nouvelles "posts_per_page" => "3"
+    "posts_per_page" => 4 //afficher les 3 derniere nouvelles "posts_per_page" => "3"
    // "orderby" =>"date",
    // "order" => "ASC"
 );
@@ -50,38 +56,40 @@ get_header();
 			endif;
 
         endwhile; // End of the loop.
- //////////////////////////////////////////////// Nouvelles ////////////////////////
- echo '<h4> '.category_description( get_category_by_slug( 'conference' ) ). '<h4>'   ;
- /* The 2nd Query (without global var) */
- 
-// The 2nd Loop
-while ( $query2->have_posts() ) {
-    $query2->the_post();
-   
-    echo '<h4>' . get_the_title( $query2->post->ID ) . '</h4>';
-    echo '<p>' . SUBSTR(get_the_excerpt(),0,300) . '</p>';
-    echo '<p>' . get_the_date('j') . '</p>';
-    echo '<p>' . get_the_date('m') . '</p>';
-    echo '<p>' . get_the_date('y') . '</p>';
-    the_post_thumbnail( 'thumbnail' );  
-    
-}
- 
-// Restore original Post Data
-wp_reset_postdata();
 
-echo '<h2> '.category_description( get_category_by_slug( 'nouvelle' ) ). '<h2>'   ;
- 
-// The Loop
-while ( $query1->have_posts() ) {
-    $query1->the_post();
-    echo '<h4>' . get_the_title() . '</h4>';
-    the_post_thumbnail( 'thumbnail' );  
-}
- 
-wp_reset_postdata();
- 
-
+        ///////////////////////////////////////// Conférence /////////////////////////////////////////////////////
+        echo '<h2 class="titreSections"> '.category_description( get_category_by_slug( 'conference' ) ). '<h2>'   ;
+      
+            // The 2nd Loop
+            while ( $query2->have_posts() ) {
+                $query2->the_post();
+                echo '<div class="conference">';
+                    
+                    the_post_thumbnail( 'thumbnail' ); 
+                        echo '<div class="conferenceTexte">'; 
+                            echo '<a href='.get_permalink().'>' . get_the_title( $query2->post->ID ) . ' :'; echo get_the_date(' j m y').  '</a>';
+                            echo '<p>' . SUBSTR(get_the_excerpt(),0,300) . '</p>';
+                        echo '</div>';   
+                echo '</div>';
+            }
+        // Restore original Post Data
+        wp_reset_postdata();
+      
+        ///////////////////////////////////////// Nouvelles /////////////////////////////////////////////////////
+        echo '<h1 class="titreSections"> '.category_description( get_category_by_slug( 'nouvelle' ) ). '<h1>'   ;
+        echo '<div class="nouvelleAlign">';
+            // The Loop
+            while ( $query1->have_posts() ) {
+                echo '<div class="nouvelleItems">';
+                    $query1->the_post();
+                    echo '<a href='. get_permalink().'>' . get_the_title() . '</a>';
+                    the_post_thumbnail( 'thumbnail' );
+                echo '</div>';
+            }
+            wp_reset_postdata();
+        echo '</div>';
+        
+         
 ?>
         
 		</main><!-- #main -->

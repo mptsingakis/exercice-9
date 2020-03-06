@@ -1,0 +1,82 @@
+.sticky {
+	display: block;
+}
+
+.post,
+.page {
+	margin: 0 0 1.5em;
+}
+
+.updated:not(.published) {
+	display: none;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+//Grille section nouvelle
+.nouvelleAlign{
+	display: grid;
+	grid-row: 1;
+	grid-template-columns: 200px 200px 200px 200px;
+	//column-gap: 10px;
+	color:rgb(119, 116, 116) ;
+	font-size: 0.7em;
+	justify-content: space-around;
+
+}
+p{
+	font-size: 0.5em;
+}
+a{
+	font-size: 0.65em;
+	color: black;
+}
+//Image mise en avant dans header
+.post-thumbnail img {
+	width: 100vw;
+	height: 50vh;
+}
+//Elements au dessu de l'image
+.entry-title, .site-description, .site-title, .main-navigation, .entry-footer{
+	display: none;
+}
+//Titre des sections nouvelle, conférence
+.titreSections{
+	font-size: 3em;
+	margin-left: 5%;
+}
+.conference{
+	margin-top: 2%;
+	margin-left: 5%;
+	margin-right: 5%;
+	display: flex;
+}
+
+.conferenceTexte{
+	margin-left: 30px;
+	margin-right: 50px;	
+}
+
+
+.evenements{
+	display: grid;
+	grid-row:31;
+	grid-column: 3;
+	font-size: 1.5em;
+	justify-content: center;
+	height: 55vh;
+	
+}
+.elm_Evenement{
+	
+	background-color: rgb(197, 194, 194);
+}

@@ -19,6 +19,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
+
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
@@ -41,169 +42,64 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
+//@import "variables-site/variables-site";
+//@import "mixins/mixins-master";
+
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
+//@import "normalize";
+
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
+//@import "typography/typography";
+
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
+//@import "elements/elements";
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
+//@import "forms/forms";
+
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
+//@import "navigation/navigation";
+
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
+//@import "modules/accessibility";
+
 /*--------------------------------------------------------------
 # Alignments
 --------------------------------------------------------------*/
+//@import "modules/alignments";
+
 /*--------------------------------------------------------------
 # Clearings
 --------------------------------------------------------------*/
+//@import "modules/clearings";
+
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
+//@import "site/secondary/widgets";
+
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
-/*--------------------------------------------------------------
-## Posts and pages
---------------------------------------------------------------*/
-.sticky {
-  display: block;
-}
-
-.post,
-.page {
-  margin: 0 0 1.5em;
-}
-
-.updated:not(.published) {
-  display: none;
-}
-
-.page-content,
-.entry-content,
-.entry-summary {
-  margin: 1.5em 0 0;
-}
-
-.page-links {
-  clear: both;
-  margin: 0 0 1.5em;
-}
-
-.nouvelleAlign {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-row: 1;
-  grid-row: 1;
-  -ms-grid-columns: 200px 200px 200px 200px;
-      grid-template-columns: 200px 200px 200px 200px;
-  color: #777474;
-  font-size: 0.7em;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-}
-
-p {
-  font-size: 0.5em;
-}
-
-a {
-  font-size: 0.65em;
-  color: black;
-}
-
-.post-thumbnail img {
-  width: 100vw;
-  height: 50vh;
-}
-
-.entry-title, .site-description, .site-title, .main-navigation, .entry-footer {
-  display: none;
-}
-
-.titreSections {
-  font-size: 3em;
-  margin-left: 5%;
-}
-
-.conference {
-  margin-top: 2%;
-  margin-left: 5%;
-  margin-right: 5%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.conferenceTexte {
-  margin-left: 30px;
-  margin-right: 50px;
-}
-
-.evenements {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-row: 31;
-  grid-row: 31;
-  -ms-grid-column: 3;
-  grid-column: 3;
-  font-size: 1.5em;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  height: 55vh;
-}
-
-.elm_Evenement {
-  background-color: #c5c2c2;
-}
-
+@import "./site/site";
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
+//@import "modules/infinite-scroll";
+
 /*--------------------------------------------------------------
 # Media
 --------------------------------------------------------------*/
-html {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after {
-  /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
-}
-
-/*body {
-	background: $color__background-body; /* Fallback for when there is no custom background color defined. 
-}*/
-hr {
-  border: 0;
-  height: 1px;
-  margin-bottom: 1.5em;
-}
-
-img {
-  height: 30%;
-  /* Make sure images are scaled correctly. */
-  max-width: 100%;
-  /* Adhere to container width. */
-  margin: 0 auto;
-}
-
-figure {
-  margin: 1em 0;
-  /* Extra wide images within figure tags don't overflow the content area. */
-}
-/*# sourceMappingURL=style.css.map */
+//@import "media/media";
+@import "./elements/elements";
