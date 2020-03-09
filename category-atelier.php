@@ -12,12 +12,13 @@
  * @package underscores
  */
 
+
 // The Query
 $args = array(
     "category_name" => "atelier",
-    "posts_per_page" => 10
-   // "orderby" =>"date",
-   // "order" => "ASC"
+    "posts_per_page" => 16 ,
+   "orderby" =>"post_name",
+    "order" => "ASC"
 );
 
 $query1 = new WP_Query( $args );
@@ -40,6 +41,7 @@ get_header();
 			endif;
 
         endwhile; // End of the loop.
+
       
         ///////////////////////////////////////// Nouvelles /////////////////////////////////////////////////////
         echo '<h1 class="titreSections"> '.category_description( get_category_by_slug( 'atelier' ) ). '<h1>'   ;
@@ -48,7 +50,7 @@ get_header();
             while ( $query1->have_posts() ) {
                 echo '<div class="nouvelleItems">';
                     $query1->the_post();
-                    echo '<h4>' . get_the_title() . '</h4>';
+                    echo '<h4 >' . get_the_title() .' _'. get_post_field('post_name').'_'.get_the_author_meta( 'display_name', $post->post_author ).'</h4>';
                     the_post_thumbnail( 'thumbnail' );
                 echo '</div>';
             }
