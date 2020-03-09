@@ -98,58 +98,14 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   margin: 0 0 1.5em;
 }
 
-/*.nouvelleAlign{
-	display: grid;
-	grid-row: 1;
-	grid-template-columns: 200px 200px 200px 200px;
-	//column-gap: 10px;
-	color:rgb(119, 116, 116) ;
-	font-size: 0.7em;
-	justify-content: space-around;
-
-}
-p{
-	font-size: 0.5em;
-}
-a{
-	font-size: 0.65em;
-	color: black;
-}*/
-/*.post-thumbnail img {
-	width: 100vw;
-	height: 50vh;
+.entry-title, .entry-footer {
+  display: none;
 }
 
-.titreSections{
-	font-size: 3em;
-	margin-left: 5%;
-}
-.conference{
-	margin-top: 2%;
-	margin-left: 5%;
-	margin-right: 5%;
-	display: flex;
+h4 {
+  font-size: 20px;
 }
 
-.conferenceTexte{
-	margin-left: 30px;
-	margin-right: 50px;	
-}
-
-
-.evenements{
-	display: grid;
-	grid-row:31;
-	grid-column: 3;
-	font-size: 1.5em;
-	justify-content: center;
-	height: 55vh;
-	
-}
-.elm_Evenement{
-	
-	background-color: rgb(197, 194, 194);
-}*/
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
@@ -189,5 +145,100 @@ img {
 figure {
   margin: 1em 0;
   /* Extra wide images within figure tags don't overflow the content area. */
+}
+
+.menu > li {
+  margin-right: 10px;
+}
+
+.main-navigation {
+  clear: both;
+  display: block;
+  float: left;
+  width: 100%;
+  margin-left: 15px;
+}
+
+.main-navigation ul {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding-left: 10;
+}
+
+.main-navigation ul ul {
+  -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  float: left;
+  position: absolute;
+  top: 100%;
+  left: -999em;
+  z-index: 99999;
+}
+
+.main-navigation ul ul ul {
+  left: -999em;
+  top: 0;
+}
+
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul {
+  left: 100%;
+}
+
+.main-navigation ul ul a {
+  width: 200px;
+}
+
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
+  left: auto;
+}
+
+.main-navigation li {
+  float: left;
+  position: relative;
+}
+
+.main-navigation a {
+  display: block;
+  text-decoration: none;
+}
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+  display: block;
+}
+
+@media screen and (min-width: 37.5em) {
+  .menu-toggle {
+    display: none;
+  }
+  .main-navigation ul {
+    display: block;
+  }
+}
+
+.site-main .comment-navigation, .site-main
+.posts-navigation, .site-main
+.post-navigation {
+  margin: 0 0 1.5em;
+  overflow: hidden;
+}
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+  float: left;
+  width: 50%;
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+  float: right;
+  text-align: right;
+  width: 50%;
 }
 /*# sourceMappingURL=style.css.map */

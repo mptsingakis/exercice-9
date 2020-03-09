@@ -21,58 +21,9 @@
 	clear: both;
 	margin: 0 0 1.5em;
 }
-
-//Grille section nouvelle
-/*.nouvelleAlign{
-	display: grid;
-	grid-row: 1;
-	grid-template-columns: 200px 200px 200px 200px;
-	//column-gap: 10px;
-	color:rgb(119, 116, 116) ;
-	font-size: 0.7em;
-	justify-content: space-around;
-
+.entry-title, .entry-footer{
+	display: none;
 }
-p{
-	font-size: 0.5em;
+h4{
+	font-size: 20px;
 }
-a{
-	font-size: 0.65em;
-	color: black;
-}*/
-//Image mise en avant dans header
-/*.post-thumbnail img {
-	width: 100vw;
-	height: 50vh;
-}
-
-.titreSections{
-	font-size: 3em;
-	margin-left: 5%;
-}
-.conference{
-	margin-top: 2%;
-	margin-left: 5%;
-	margin-right: 5%;
-	display: flex;
-}
-
-.conferenceTexte{
-	margin-left: 30px;
-	margin-right: 50px;	
-}
-
-
-.evenements{
-	display: grid;
-	grid-row:31;
-	grid-column: 3;
-	font-size: 1.5em;
-	justify-content: center;
-	height: 55vh;
-	
-}
-.elm_Evenement{
-	
-	background-color: rgb(197, 194, 194);
-}*/
