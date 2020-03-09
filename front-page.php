@@ -21,7 +21,7 @@ $args = array(
     //"order" => "column "
     'orderby' => array(
         'post_author' => 'ASC',
-        'post_name' => 'ASC',
+        'heure',
         ),
 );
 
@@ -54,6 +54,7 @@ get_header();
             while ( $query1->have_posts() ) {
                 echo '<div class="atelierItems">';
                     $query1->the_post();
+                    $heure= substr(get_post_field("post_name"),-2);
                     echo '<p class="center">' . get_the_title() .'</p>';
                     echo' <p>'. get_post_field('post_name').'</p>';
                     echo' <p>'.get_the_author_meta( 'display_name', $post->post_author ).'</p>';
