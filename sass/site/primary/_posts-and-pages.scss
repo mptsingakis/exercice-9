@@ -31,10 +31,17 @@ h4{
 	display: grid;
 	grid-row: 11;
 	grid-template-columns: 200px 200px 200px 200px;
+	
+	//dans _variables-site.scss differente couleur on été faite 
+	//pour les ajouter au formateur mais incapable d'ajouter des formateur j'en est mis 1 en background
+	//background-color: $color_grid_eddy;
 	margin-left: 50px;
 }
 .atelierItems{
 	border-style: solid;
 	font-size: 0.6em;
 	justify-items: center;
+	padding-left: 18%;
+	padding-right: 5%;
+	
 }
