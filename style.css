@@ -98,74 +98,58 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   margin: 0 0 1.5em;
 }
 
-.nouvelleAlign {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-row: 1;
-  grid-row: 1;
-  -ms-grid-columns: 200px 200px 200px 200px;
-      grid-template-columns: 200px 200px 200px 200px;
-  color: #777474;
-  font-size: 0.7em;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+/*.nouvelleAlign{
+	display: grid;
+	grid-row: 1;
+	grid-template-columns: 200px 200px 200px 200px;
+	//column-gap: 10px;
+	color:rgb(119, 116, 116) ;
+	font-size: 0.7em;
+	justify-content: space-around;
+
+}
+p{
+	font-size: 0.5em;
+}
+a{
+	font-size: 0.65em;
+	color: black;
+}*/
+/*.post-thumbnail img {
+	width: 100vw;
+	height: 50vh;
 }
 
-p {
-  font-size: 0.5em;
+.titreSections{
+	font-size: 3em;
+	margin-left: 5%;
+}
+.conference{
+	margin-top: 2%;
+	margin-left: 5%;
+	margin-right: 5%;
+	display: flex;
 }
 
-a {
-  font-size: 0.65em;
-  color: black;
+.conferenceTexte{
+	margin-left: 30px;
+	margin-right: 50px;	
 }
 
-.post-thumbnail img {
-  width: 100vw;
-  height: 50vh;
-}
 
-.entry-title, .site-description, .site-title, .main-navigation, .entry-footer {
-  display: none;
+.evenements{
+	display: grid;
+	grid-row:31;
+	grid-column: 3;
+	font-size: 1.5em;
+	justify-content: center;
+	height: 55vh;
+	
 }
-
-.titreSections {
-  font-size: 3em;
-  margin-left: 5%;
-}
-
-.conference {
-  margin-top: 2%;
-  margin-left: 5%;
-  margin-right: 5%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.conferenceTexte {
-  margin-left: 30px;
-  margin-right: 50px;
-}
-
-.evenements {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-row: 31;
-  grid-row: 31;
-  -ms-grid-column: 3;
-  grid-column: 3;
-  font-size: 1.5em;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  height: 55vh;
-}
-
-.elm_Evenement {
-  background-color: #c5c2c2;
-}
-
+.elm_Evenement{
+	
+	background-color: rgb(197, 194, 194);
+}*/
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/

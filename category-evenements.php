@@ -51,32 +51,3 @@ get_sidebar();
 get_footer();
 ////////////////////////////////////////////////////////
 
-
-
-///////////////////////////////////////// Événements /////////////////////////////////////////////////////
-/*
-get_header();
-echo '<h1 class="titreSections"> '.category_description( get_category_by_slug( 'evenements' ) ). '</h1>'   ;
-         
-echo '<div class="evenements">';
- 
-   // while ( $query3->have_posts() ) {
-       // $query3->the_post();
-       while ( have_posts() ) :
-        the_post();
-        $mois = get_the_date('m');
-        $column = ($mois % 3) + 1;
-        $row = get_the_date('j');
-        //var_dump($column, $row);
-        echo'<div class="elm_Evenement" style="grid-area:'.$row.'/'.$column.'">';
-            echo '<a href='.get_permalink().'>' . get_the_title( get_post() ) . ' :'; echo get_the_date(' j m y').  '</a>';   
-        echo '</div>';
-       endwhile;
-    // Restore original Post Data
-    wp_reset_postdata();
-
-echo '</div>';
-
-get_footer();
-?>
-*/

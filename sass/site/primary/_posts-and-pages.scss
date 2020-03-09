@@ -23,7 +23,7 @@
 }
 
 //Grille section nouvelle
-.nouvelleAlign{
+/*.nouvelleAlign{
 	display: grid;
 	grid-row: 1;
 	grid-template-columns: 200px 200px 200px 200px;
@@ -39,17 +39,13 @@ p{
 a{
 	font-size: 0.65em;
 	color: black;
-}
+}*/
 //Image mise en avant dans header
-.post-thumbnail img {
+/*.post-thumbnail img {
 	width: 100vw;
 	height: 50vh;
 }
-//Elements au dessu de l'image
-.entry-title, .site-description, .site-title, .main-navigation, .entry-footer{
-	display: none;
-}
-//Titre des sections nouvelle, conférence
+
 .titreSections{
 	font-size: 3em;
 	margin-left: 5%;
@@ -79,4 +75,4 @@ a{
 .elm_Evenement{
 	
 	background-color: rgb(197, 194, 194);
-}
+}*/
