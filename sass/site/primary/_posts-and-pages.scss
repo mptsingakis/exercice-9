@@ -27,3 +27,14 @@
 h4{
 	font-size: 20px;
 }
+.atelierAlign{
+	display: grid;
+	grid-row: 11;
+	grid-template-columns: 200px 200px 200px 200px;
+	margin-left: 50px;
+}
+.atelierItems{
+	border-style: solid;
+	font-size: 0.6em;
+	justify-items: center;
+}

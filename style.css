@@ -106,6 +106,22 @@ h4 {
   font-size: 20px;
 }
 
+.atelierAlign {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 11;
+  grid-row: 11;
+  -ms-grid-columns: 200px 200px 200px 200px;
+      grid-template-columns: 200px 200px 200px 200px;
+  margin-left: 50px;
+}
+
+.atelierItems {
+  border-style: solid;
+  font-size: 0.6em;
+  justify-items: center;
+}
+
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
