@@ -60,8 +60,8 @@ get_header();
                         
                         echo '<p>' . get_the_title() .'</p>';
                         echo '<p>' . SUBSTR(get_the_excerpt(),0,200) . '</p>';
-                        echo  '<button type="button"  class="btnNouvelle" id="'.get_the_ID().'"value="Lire la suite..."></button>';
-                        echo  '<div data-id="'.get_the_ID().'" > </div>';
+                        echo  '<input type="button"  class="btnNouvelle" id="'.get_the_ID().'"value="Lire la suite..."></input>';
+                        echo  '<div data-id="'.get_the_ID().'" > </div>';//Pour détecter l'état visible
                     echo '</div>';
                 echo '</div>';
             }
