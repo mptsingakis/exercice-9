@@ -53,12 +53,13 @@ get_header();
                     $query1->the_post();
                     $heure= substr(get_post_field("post_name"),-2);
 
+                    the_post_thumbnail( 'thumbnail' ); 
                     echo '<div class="conferenceText">';
-                        the_post_thumbnail( 'thumbnail' ); 
+                        
                         echo '<p>' . get_the_title() .'</p>';
                         echo '<p>' . SUBSTR(get_the_excerpt(),0,200) . '</p>';
                         //var_dump(get_the_ID());
-                       echo  '<button type="button" id="'.get_the_ID().'">Lire la suite...</button>';
+                       echo  '<button type="button" class="btnNouvelle" id="'.get_the_ID().'">Lire la suite...</button>';
                     echo '</div>';
             }
             wp_reset_postdata();
