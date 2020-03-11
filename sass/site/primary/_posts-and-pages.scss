@@ -83,12 +83,17 @@ a{
 	flex-direction: column;
 }
 
-.conferenceTexte{
-	margin-left: 30px;
-	margin-right: 50px;	
+.conferenceText{
+	padding-left: 20px;
+	
 	
 }
 
 .conference p{
 font-size: 0.4em;
+}
+.conferenceItems{
+	display: flex;
+	flex-direction: row;
+	padding-top: 20px;
 }

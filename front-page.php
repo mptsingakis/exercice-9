@@ -50,17 +50,20 @@ get_header();
             // The Loop
             while ( $query1->have_posts() ) {
                 
-                    $query1->the_post();
-                    $heure= substr(get_post_field("post_name"),-2);
-
+                $query1->the_post();
+                $heure= substr(get_post_field("post_name"),-2);
+                
+                echo '<div class="conferenceItems">';
+    
                     the_post_thumbnail( 'thumbnail' ); 
                     echo '<div class="conferenceText">';
                         
                         echo '<p>' . get_the_title() .'</p>';
                         echo '<p>' . SUBSTR(get_the_excerpt(),0,200) . '</p>';
-                        //var_dump(get_the_ID());
-                       echo  '<button type="button" class="btnNouvelle" id="'.get_the_ID().'">Lire la suite...</button>';
+                        echo  '<button type="button" class="btnNouvelle" id="'.get_the_ID().'">Lire la suite...</button>';
+                   
                     echo '</div>';
+                echo '</div>';
             }
             wp_reset_postdata();
         echo '</div>';
