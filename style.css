@@ -183,6 +183,19 @@ a {
   padding-top: 20px;
 }
 
+.titreSections {
+  font-size: 0.9em;
+  margin-left: 2%;
+}
+
+.postComplet::before {
+  visibility: visible;
+}
+
+.postComplet ::after {
+  visibility: hidden;
+}
+
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/

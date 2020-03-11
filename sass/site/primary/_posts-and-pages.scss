@@ -85,8 +85,6 @@ a{
 
 .conferenceText{
 	padding-left: 20px;
-	
-	
 }
 
 .conference p{
@@ -96,4 +94,14 @@ font-size: 0.4em;
 	display: flex;
 	flex-direction: row;
 	padding-top: 20px;
+}
+.titreSections{
+	font-size:0.9em;
+	margin-left: 2%;
+}
+.postComplet::before{
+	visibility:visible;
+}
+.postComplet ::after{
+	visibility:hidden;
 }

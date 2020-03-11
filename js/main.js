@@ -15,25 +15,17 @@ let click =false;
 
 function Ajax(evt) {
     
+    let oAffiche = document.querySelector("div[visible='true']");
 
-    let oDiv = this.parentElement;
-    //Deuxieme click
-    if(click==true){
-        let postComplet= document.getElementsById("postComplet");
-        oDiv.removeChild(postComplet);
-        click=false;
+    let oDiv = document.querySelector("div[date-id='"+evt.srcElement.id+"']");
+    
+    if(this.value == "Voir moins"){
+        oDiv.style.display= "none";
+        oDiv.setAttribute("visible","false");
 
-        console.log(true);
+        this.value="Lire la suite...";
     }
-
-    //Premier click /////////////////////////////////////////////////
-    if(click==false){
-
-        //console.log(evt.target.getAttribute("id"));
-    //  instructions ici
-
-   click=true;
-      
+    
     let maRequete = new XMLHttpRequest();
       
     maRequete.onload = function(){
@@ -42,7 +34,7 @@ function Ajax(evt) {
           let oDataJSON = JSON.parse(maRequete.responseText);
 //            console.log(evt.target.dataset.checked);
           // instructions ici
-          console.log(oDataJSON);
+          //console.log(oDataJSON);
           creationHTML(oDataJSON, oDiv);  // paramètres à ajouter
       } else {
           console.log('La connexion est faite mais il y a une erreur');
@@ -70,12 +62,11 @@ function Ajax(evt) {
       console.log("erreur de connexion");
       maRequete.send() 
   }
-  // instructions à ajouter
 */
     }
 
     
-}
+//}
 
 
 
@@ -83,16 +74,15 @@ function Ajax(evt) {
 
 function creationHTML(oDataJSON, oDiv){
 
-//console.log(oDiv);
+console.log(oDataJSON);
 
-    let monHtmlString = '<div id="postComplet">';
+    let monHtmlString = '<div class="postComplet">';
     
         monHtmlString += '<h2>' + oDataJSON.title.rendered + '</h2>';
         monHtmlString += oDataJSON.content.rendered;
         monHtmlString += '</div>';
         
         oDiv.innerHTML += monHtmlString;
-        //console.log(oDataJSON); 
 }
 
 
