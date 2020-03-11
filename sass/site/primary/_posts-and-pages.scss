@@ -1,4 +1,4 @@
-.sticky {
+/*.sticky {
 	display: block;
 }
 
@@ -44,4 +44,49 @@ h4{
 	padding-left: 18%;
 	padding-right: 5%;
 	
+}*/
+.sticky {
+	display: block;
+}
+
+.post,
+.page {
+	margin: 0 0 1.5em;
+}
+
+.updated:not(.published) {
+	display: none;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+a{
+	font-size: 0.65em;
+	color: black;
+}
+//Titre des sections nouvelle, conférence
+
+.conference{
+	margin-top: 2%;
+	margin-left: 5%;
+	margin-right: 5%;
+	display: flex;
+}
+
+.conferenceTexte{
+	margin-left: 30px;
+	margin-right: 50px;	
+}
+
+.conference p{
+font-size: 0.4em;
 }

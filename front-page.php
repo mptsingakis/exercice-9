@@ -15,18 +15,15 @@
 
 // The Query
 $args = array(
-    "category_name" => "atelier",
-    "posts_per_page" => 16 ,
-   //"orderby" =>"post_author","post_name",
-    //"order" => "column "
-    'orderby' => array(
-        'post_author' => 'ASC',
-        'heure',
-        ),
+    "category_name" => "nouvelle",
+    //"posts_per_page" => 3, //afficher les 3 derniere nouvelles "posts_per_page" => "3"
+   // "orderby" =>"date",
+   // "order" => "ASC"
 );
 
 $query1 = new WP_Query( $args );
- 
+
+
 
 get_header();
 ?>
@@ -48,18 +45,21 @@ get_header();
 
       
         ///////////////////////////////////////// Nouvelles /////////////////////////////////////////////////////
-        echo '<h1 class="titreSections"> '.category_description( get_category_by_slug( 'atelier' ) ). '<h1>'   ;
-        echo '<div class="atelierAlign">';
+        echo '<h1 class="titreSections"> '.category_description( get_category_by_slug( 'nouvelle' ) ). '<h1>'   ;
+        echo '<div class="conference">';
             // The Loop
             while ( $query1->have_posts() ) {
-                echo '<div class="atelierItems">';
+                
                     $query1->the_post();
                     $heure= substr(get_post_field("post_name"),-2);
-                    echo '<p class="center">' . get_the_title() .'</p>';
-                    echo' <p>'. get_post_field('post_name').'</p>';
-                    echo' <p>'.get_the_author_meta( 'display_name', $post->post_author ).'</p>';
-                  
-                echo '</div>';
+
+                    echo '<div class="conferenceText">';
+                        the_post_thumbnail( 'thumbnail' ); 
+                        echo '<p>' . get_the_title() .'</p>';
+                        echo '<p>' . SUBSTR(get_the_excerpt(),0,200) . '</p>';
+                        //var_dump(get_the_ID());
+                       echo  '<button type="button" id="'.get_the_ID().'">Lire la suite...</button>';
+                    echo '</div>';
             }
             wp_reset_postdata();
         echo '</div>';

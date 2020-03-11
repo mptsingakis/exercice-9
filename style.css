@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
 Theme Name: underscores enfant
 Theme URI: http://underscores.me/
@@ -74,6 +75,53 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
+/*.sticky {
+	display: block;
+}
+
+.post,
+.page {
+	margin: 0 0 1.5em;
+}
+
+.updated:not(.published) {
+	display: none;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+.entry-title, .entry-footer{
+	display: none;
+}
+h4{
+	font-size: 20px;
+}
+.atelierAlign{
+	display: grid;
+	grid-row: 11;
+	grid-template-columns: 200px 200px 200px 200px;
+	
+	//dans _variables-site.scss differente couleur on été faite 
+	//pour les ajouter au formateur mais incapable d'ajouter des formateur j'en est mis 1 en background
+	//background-color: $color_grid_eddy;
+	margin-left: 50px;
+}
+.atelierItems{
+	border-style: solid;
+	font-size: 0.6em;
+	justify-items: center;
+	padding-left: 18%;
+	padding-right: 5%;
+	
+}*/
 .sticky {
   display: block;
 }
@@ -98,30 +146,27 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   margin: 0 0 1.5em;
 }
 
-.entry-title, .entry-footer {
-  display: none;
+a {
+  font-size: 0.65em;
+  color: black;
 }
 
-h4 {
-  font-size: 20px;
+.conference {
+  margin-top: 2%;
+  margin-left: 5%;
+  margin-right: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.atelierAlign {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-row: 11;
-  grid-row: 11;
-  -ms-grid-columns: 200px 200px 200px 200px;
-      grid-template-columns: 200px 200px 200px 200px;
-  margin-left: 50px;
+.conferenceTexte {
+  margin-left: 30px;
+  margin-right: 50px;
 }
 
-.atelierItems {
-  border-style: solid;
-  font-size: 0.6em;
-  justify-items: center;
-  padding-left: 18%;
-  padding-right: 5%;
+.conference p {
+  font-size: 0.4em;
 }
 
 /*--------------------------------------------------------------

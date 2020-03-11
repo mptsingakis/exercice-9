@@ -26,7 +26,3 @@ add_action( 'pre_get_posts', 'extraire_evenement' );
 
 
 
-
-
-
-
