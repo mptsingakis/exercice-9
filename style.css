@@ -1,5 +1,5 @@
 /*!
-Theme Name: underscores enfant
+Theme Name: underscores enfant 2
 Theme URI: http://underscores.me/
 Author: MpTsingakis & Marine Fenech
 Author URI: http://underscores.me/
@@ -331,6 +331,7 @@ a {
 
 .nouvelleText {
   padding-left: 20px;
+  color: red;
 }
 
 .nouvelleItems {
