@@ -49,7 +49,7 @@ function Ajax(evt) {
         }
     };
 
-    maRequete.open('GET', 'http://localhost/wordpress/wp-json/wp/v2/posts/' + evt.target.getAttribute("id"));
+    maRequete.open('GET', 'localhost/wordpress/wp-json/wp/v2/posts/' + evt.target.getAttribute("id"));
     maRequete.send();
 
 

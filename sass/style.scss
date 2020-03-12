@@ -1,7 +1,7 @@
 /*!
 Theme Name: underscores enfant
 Theme URI: http://underscores.me/
-Author: MpTsingakis
+Author: MpTsingakis & Marine Fenech
 Author URI: http://underscores.me/
 Description: Description
 Version: 1.0.0
@@ -23,85 +23,50 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
-# Normalize
-# Typography
+# variables - mixins
+# extend
 # Elements
-# Forms
 # Navigation
-	## Links
 	## Menus
-# Accessibility
-# Alignments
-# Clearings
-# Widgets
-# Content
-	## Posts and pages
-	## Comments
-# Infinite scroll
-# Media
-	## Captions
-	## Galleries
+# Site
+	##posts and pages
+# footer
+# entete
 --------------------------------------------------------------*/
-//@import "variables-site/variables-site";
-//@import "mixins/mixins-master";
-
+@import "variables-site/variable";
+@import "mixins";
 /*--------------------------------------------------------------
-# Normalize
+# extend
 --------------------------------------------------------------*/
-//@import "normalize";
+@import "extend";
 
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
-//@import "typography/typography";
+@import "typography";
 
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
-//@import "elements/elements";
-/*--------------------------------------------------------------
-# Forms
---------------------------------------------------------------*/
-//@import "forms/forms";
+@import "elements/elements";
 
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
-//@import "navigation/navigation";
-
-/*--------------------------------------------------------------
-# Accessibility
---------------------------------------------------------------*/
-//@import "modules/accessibility";
-
-/*--------------------------------------------------------------
-# Alignments
---------------------------------------------------------------*/
-//@import "modules/alignments";
-
-/*--------------------------------------------------------------
-# Clearings
---------------------------------------------------------------*/
-//@import "modules/clearings";
-
-/*--------------------------------------------------------------
-# Widgets
---------------------------------------------------------------*/
-//@import "site/secondary/widgets";
-
+@import "navigation/navigation";
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
 @import "./site/site";
 /*--------------------------------------------------------------
-# Infinite scroll
+# Content
 --------------------------------------------------------------*/
-//@import "modules/infinite-scroll";
-
+@import "./site/primary/posts-and-pages";
 /*--------------------------------------------------------------
-# Media
+# Widgets
 --------------------------------------------------------------*/
-//@import "media/media";
-@import "./elements/elements";
-
-@import"./navigation/menus";
+@import "footer";
+/*--------------------------------------------------------------
+# Entete
+--------------------------------------------------------------*/
+@import "entete";
