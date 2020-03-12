@@ -317,8 +317,10 @@ a {
   color: black;
 }
 
-.nouvelles {
-  margin: 0 auto;
+.conference {
+  margin-top: 2%;
+  margin-left: 5%;
+  margin-right: 5%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -326,14 +328,17 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 80%;
 }
 
-.nouvelleText {
+.conferenceText {
   padding-left: 20px;
 }
 
-.nouvelleItems {
+.conference p {
+  font-size: 0.4em;
+}
+
+.conferenceItems {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -349,20 +354,12 @@ a {
   margin-left: 2%;
 }
 
-.titleSection {
-  font-size: 0.7em;
+.postComplet::before {
+  visibility: visible;
 }
 
-.resumeEvt {
-  font-size: 0.5em;
-}
-
-.titreSection {
-  margin-left: 8%;
-  margin-top: 10vh;
-  margin-bottom: 3vh;
-  font-size: 1.6em;
-  text-decoration: underline;
+.postComplet ::after {
+  visibility: hidden;
 }
 
 /*--------------------------------------------------------------

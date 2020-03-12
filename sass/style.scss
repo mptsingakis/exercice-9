@@ -5,6 +5,7 @@ Author: MpTsingakis & Marine Fenech
 Author URI: http://underscores.me/
 Description: Description
 Version: 1.0.0
+Template: underscore
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: underscores-enfant
@@ -33,8 +34,16 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # footer
 # entete
 --------------------------------------------------------------*/
-@import "variables-site/variable";
-@import "mixins";
+/*--------------------------------------------------------------
+# variable
+--------------------------------------------------------------*/
+
+@import "variables-site/variables-site";
+/*--------------------------------------------------------------
+# miximns
+--------------------------------------------------------------*/
+
+@import "mixins/mixins";
 /*--------------------------------------------------------------
 # extend
 --------------------------------------------------------------*/
@@ -43,7 +52,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
-@import "typography";
+@import "typography/typography";
 
 /*--------------------------------------------------------------
 # Elements
@@ -54,14 +63,13 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Navigation
 --------------------------------------------------------------*/
 @import "navigation/navigation";
+
+@import "navigation/menus";
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
 @import "./site/site";
-/*--------------------------------------------------------------
-# Content
---------------------------------------------------------------*/
-@import "./site/primary/posts-and-pages";
+
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/

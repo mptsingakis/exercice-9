@@ -1,50 +1,3 @@
-/*.sticky {
-	display: block;
-}
-
-.post,
-.page {
-	margin: 0 0 1.5em;
-}
-
-.updated:not(.published) {
-	display: none;
-}
-
-.page-content,
-.entry-content,
-.entry-summary {
-	margin: 1.5em 0 0;
-}
-
-.page-links {
-	clear: both;
-	margin: 0 0 1.5em;
-}
-.entry-title, .entry-footer{
-	display: none;
-}
-h4{
-	font-size: 20px;
-}
-.atelierAlign{
-	display: grid;
-	grid-row: 11;
-	grid-template-columns: 200px 200px 200px 200px;
-	
-	//dans _variables-site.scss differente couleur on été faite 
-	//pour les ajouter au formateur mais incapable d'ajouter des formateur j'en est mis 1 en background
-	//background-color: $color_grid_eddy;
-	margin-left: 50px;
-}
-.atelierItems{
-	border-style: solid;
-	font-size: 0.6em;
-	justify-items: center;
-	padding-left: 18%;
-	padding-right: 5%;
-	
-}*/
 .sticky {
 	display: block;
 }
@@ -75,22 +28,19 @@ a{
 }
 //Titre des sections nouvelle, conférence
 
-.conference{
-	margin-top: 2%;
-	margin-left: 5%;
-	margin-right: 5%;
+.nouvelles{
+	margin:0 auto;
 	display: flex;
 	flex-direction: column;
+	width: 80%;
 }
 
-.conferenceText{
+.nouvelleText{
 	padding-left: 20px;
 }
 
-.conference p{
-font-size: 0.4em;
-}
-.conferenceItems{
+
+.nouvelleItems{
 	display: flex;
 	flex-direction: row;
 	padding-top: 20px;
@@ -99,9 +49,17 @@ font-size: 0.4em;
 	font-size:0.9em;
 	margin-left: 2%;
 }
-.postComplet::before{
-	visibility:visible;
+.titleSection{
+font-size: 0.7em;
 }
-.postComplet ::after{
-	visibility:hidden;
+.resumeEvt{
+	font-size: 0.5em;
+
+}
+.titreSection{
+	margin-left: 8%;
+	margin-top: 10vh;
+	margin-bottom: 3vh;
+	font-size: 1.6em;
+	text-decoration: underline;
 }

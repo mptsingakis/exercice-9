@@ -12,19 +12,6 @@
  * @package underscores
  */
 
-
-// The Query
-$args = array(
-    "category_name" => "nouvelle",
-    //"posts_per_page" => 3, //afficher les 3 derniere nouvelles "posts_per_page" => "3"
-   // "orderby" =>"date",
-   // "order" => "ASC"
-);
-
-$query1 = new WP_Query( $args );
-
-
-
 get_header();
 ?>
 	<div id="primary" class="content-area">
@@ -42,35 +29,62 @@ get_header();
 			endif;
 
         endwhile; // End of the loop.
+ //////////////////////////////////////////////// Nouvelles ////////////////////////
 
-      
-        ///////////////////////////////////////// Nouvelles /////////////////////////////////////////////////////
-        echo '<h1 class="titreSections"> '.category_description( get_category_by_slug( 'nouvelle' ) ). '<h1>'   ;
-        echo '<div class="conference">';
-            // The Loop
-            while ( $query1->have_posts() ) {
-                
-                $query1->the_post();
-                $heure= substr(get_post_field("post_name"),-2);
-                
-                echo '<div class="conferenceItems">';
-    
-                    the_post_thumbnail( 'thumbnail' ); 
-                    echo '<div class="conferenceText">';
-                        
-                        echo '<p>' . get_the_title() .'</p>';
-                        echo '<p>' . SUBSTR(get_the_excerpt(),0,200) . '</p>';
-                        echo  '<input type="button"  class="btnNouvelle" id="'.get_the_ID().'"value="Lire la suite..."></input>';
-                        echo  '<div data-id="'.get_the_ID().'" > </div>';
-                    echo '</div>';
-                echo '</div>';
-            }
-            wp_reset_postdata();
+echo '<h2 class="titreSection"> '.category_description( get_category_by_slug( 'nouvelle' ) ). '<h2>'   ;
+// The Query
+
+$args = array(
+    "category_name" => "nouvelle",
+    "posts_per_page" =>3, //afficher les 3 derniere nouvelles "posts_per_page" => "3"
+   "orderby" =>"date",
+   "order" => "DSC"
+);
+$query1 = new WP_Query( $args );
+ 
+// The Loop
+while ( $query1->have_posts() ) {
+    $query1->the_post();
+    echo '<h2>' . get_the_title() . '</h2>';
+    echo '<p>' . SUBSTR(get_the_excerpt(),0,300) . '</p>';
+}
+ 
+wp_reset_postdata();
+ 
+ 
+// The 2nd Query (without global var) 
+
+$args2 = array(
+    "category_name" => "evenement",
+    "posts_per_page"=> 3,
+    "orderby" =>"date",
+    "order" => "DSC"
+
+);
+$query2 = new WP_Query( $args2 );
+ 
+echo '<h2 class="titreSection"> '.category_description( get_category_by_slug( 'evenement' ) ). '<h2>'   ;
+echo '<div class="nouvelles"> ';
+    // The 2nd Loop
+    while ( $query2->have_posts() ) {
+        $query2->the_post();
+
+        echo '<div class="nouvelleItems">';
+            the_post_thumbnail( 'thumbnail' );  
+            echo '<div class="nouvelleText">';
+                 echo '<h3 class="titleSection">' . get_the_title( $query2->post->ID ) . '</h3>';
+                echo '<p class="resumeEvt">' . SUBSTR(get_the_excerpt(),0,300) . '</p>';
+            echo '</div>';
         echo '</div>';
-        
-         
+    }
+echo '</div>';
+// Restore original Post Data
+wp_reset_postdata();
+
 ?>
         
+        
+
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
