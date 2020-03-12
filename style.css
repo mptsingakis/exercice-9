@@ -317,7 +317,7 @@ a {
   color: black;
 }
 
-.nouvelles {
+.evenements {
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -329,12 +329,11 @@ a {
   width: 80%;
 }
 
-.nouvelleText {
+.evenementText {
   padding-left: 20px;
-  color: red;
 }
 
-.nouvelleItems {
+.evenementItems {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -345,17 +344,14 @@ a {
   padding-top: 20px;
 }
 
-.titreSections {
-  font-size: 0.9em;
-  margin-left: 2%;
-}
-
-.titleSection {
-  font-size: 0.7em;
-}
-
 .resumeEvt {
-  font-size: 0.5em;
+  font-size: 0.8em;
+  color: #777474;
+}
+
+.resumeNouvelle {
+  font-size: 1.5em;
+  margin-left: 1%;
 }
 
 .titreSection {
@@ -366,10 +362,91 @@ a {
   text-decoration: underline;
 }
 
+.nouvelles {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 3;
+  grid-row: 3;
+  -ms-grid-columns: 200px;
+      grid-template-columns: 200px;
+  color: #777474;
+  font-size: 0.7em;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-left: -40vw;
+}
+
+.nouvelleText {
+  background-color: white;
+  width: 60vw;
+  height: 20vh;
+  margin-top: 5vh;
+  border-radius: 1em;
+}
+
+.nouvelleText h3 {
+  font-size: 2em;
+  margin-left: 1%;
+}
+
+.sectionNouvelles {
+  background-color: #fdc9c9;
+  height: 100vh;
+  padding: 1%;
+}
+
+.sectionNouvelles h2 {
+  margin-top: -.5%;
+}
+
+@media screen and (min-width: 1250px) {
+  .resumeNouvelle {
+    text-align: center;
+  }
+  .nouvelles {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-row: 1;
+    grid-row: 1;
+    -ms-grid-columns: 200px 200px 200px;
+        grid-template-columns: 200px 200px 200px;
+    font-size: 0.7em;
+    margin-left: -8vw;
+  }
+  .nouvelleText {
+    width: 22.5vw;
+    height: 30vh;
+  }
+  .nouvelleText h3 {
+    font-size: 2em;
+    text-align: center;
+  }
+  .sectionNouvelles {
+    height: 50vh;
+  }
+}
+
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Entete
 --------------------------------------------------------------*/
+.wp-block-image img {
+  width: 100%;
+}
+
+.entry-title {
+  position: absolute;
+  color: white;
+  font-size: 7em;
+  margin-top: 1vh;
+}
+
+@media screen and (min-width: 1250px) {
+  .entry-title {
+    margin-top: 80vh;
+    font-size: 10em;
+  }
+}
 /*# sourceMappingURL=style.css.map */

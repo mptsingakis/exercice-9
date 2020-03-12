@@ -28,34 +28,30 @@ a{
 }
 //Titre des sections nouvelle, conférence
 
-.nouvelles{
+.evenements{
 	margin:0 auto;
 	display: flex;
 	flex-direction: column;
 	width: 80%;
 }
 
-.nouvelleText{
+.evenementText{
 	padding-left: 20px;
-	color: red;
 }
 
 
-.nouvelleItems{
+.evenementItems{
 	display: flex;
 	flex-direction: row;
 	padding-top: 20px;
 }
-.titreSections{
-	font-size:0.9em;
-	margin-left: 2%;
-}
-.titleSection{
-font-size: 0.7em;
-}
 .resumeEvt{
-	font-size: 0.5em;
-
+	font-size: 0.8em;
+	color:rgb(119, 116, 116) ;
+}
+.resumeNouvelle{
+	font-size:1.5em;
+	margin-left: 1%;
 }
 .titreSection{
 	margin-left: 8%;
@@ -63,4 +59,65 @@ font-size: 0.7em;
 	margin-bottom: 3vh;
 	font-size: 1.6em;
 	text-decoration: underline;
+}
+.nouvelles{
+		display: grid;
+		grid-row: 3;
+		grid-template-columns: 200px ;
+		color:rgb(119, 116, 116) ;
+		font-size: 0.7em;
+		justify-content: space-around;
+		margin-left: -40vw;
+		
+}
+
+.nouvelleText {
+	background-color: white;
+	width: 60vw;
+	height: 20vh;
+	margin-top: 5vh;
+	border-radius: 1em;
+	h3 {
+		font-size: 2em;
+		margin-left: 1%;
+	}
+}
+
+.sectionNouvelles {
+	background-color: rgb(253, 201, 201);
+	height: 100vh;
+	padding: 1%;
+	h2 {
+		margin-top: -.5%;
+	}
+}
+
+@media screen and (min-width: 1250px) {
+
+	.resumeNouvelle{
+		text-align: center;
+	}
+
+	.nouvelles{
+		display: grid;
+		grid-row: 1;
+		grid-template-columns: 200px 200px 200px ;
+		font-size: 0.7em;
+		margin-left: -8vw;
+		
+	}
+
+	.nouvelleText {
+	width: 22.5vw;
+	height: 30vh;
+		h3 {
+			font-size: 2em;
+			text-align: center;
+		}
+	}
+
+	.sectionNouvelles {
+		height: 50vh;
+	}
+
 }

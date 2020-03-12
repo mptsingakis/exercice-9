@@ -31,7 +31,6 @@ get_header();
         endwhile; // End of the loop.
  //////////////////////////////////////////////// Nouvelles ////////////////////////
 
-echo '<h2 class="titreSection"> '.category_description( get_category_by_slug( 'nouvelle' ) ). '<h2>'   ;
 // The Query
 
 $args = array(
@@ -41,13 +40,20 @@ $args = array(
    "order" => "DSC"
 );
 $query1 = new WP_Query( $args );
- 
+
+
+
+echo '<div class="sectionNouvelles"><h2 class="titreSection"> '.category_description( get_category_by_slug( 'nouvelle' ) ). '</h2>'   ;
+echo '<div class="nouvelles">';
 // The Loop
 while ( $query1->have_posts() ) {
     $query1->the_post();
-    echo '<h2>' . get_the_title() . '</h2>';
-    echo '<p>' . SUBSTR(get_the_excerpt(),0,300) . '</p>';
+    echo '<div class="nouvelleText">';
+        echo '<h3 class="titleSection">' . get_the_title() . '</h3>';
+        echo '<p class="resumeNouvelle">' . SUBSTR(get_the_excerpt(),0,300) . '</p>';
+    echo '</div>';
 }
+echo '</div></div>';
  
 wp_reset_postdata();
  
@@ -62,22 +68,21 @@ $args2 = array(
 
 );
 $query2 = new WP_Query( $args2 );
- 
-echo '<h2 class="titreSection"> '.category_description( get_category_by_slug( 'evenement' ) ). '<h2>'   ;
-echo '<div class="nouvelles"> ';
+echo '<div class="sectionEvenements"><h2 class="titreSection"> '.category_description( get_category_by_slug( 'evenement' ) ). '</h2>'   ;
+echo '<div class="evenements"> ';
     // The 2nd Loop
     while ( $query2->have_posts() ) {
         $query2->the_post();
 
-        echo '<div class="nouvelleItems">';
+        echo '<div class="evenementItems">';
             the_post_thumbnail( 'thumbnail' );  
-            echo '<div class="nouvelleText">';
+            echo '<div class="evenementText">';
                  echo '<h3 class="titleSection">' . get_the_title( $query2->post->ID ) . '</h3>';
                 echo '<p class="resumeEvt">' . SUBSTR(get_the_excerpt(),0,300) . '</p>';
             echo '</div>';
         echo '</div>';
     }
-echo '</div>';
+echo '</div></div>';
 // Restore original Post Data
 wp_reset_postdata();
 
@@ -89,5 +94,6 @@ wp_reset_postdata();
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();
+
+?>
