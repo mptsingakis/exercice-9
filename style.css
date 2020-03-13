@@ -103,11 +103,11 @@ figure {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
-#chkBoutonBurger:checked ~ .main-navigation ul {
-  max-height: 200px;
+#chkBoutonBurger:checked ~ .menu-nav-container > #primary-menu {
+  max-height: 40vh;
 }
 
-#chkBoutonBurger:checked ~ ul > li {
+#chkBoutonBurger:checked ~ .menu-nav-container > #primary-menu > .menu-item {
   opacity: 1;
 }
 
@@ -173,6 +173,8 @@ figure {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  position: absolute;
+  z-index: 999;
 }
 
 .ligne {
@@ -201,8 +203,7 @@ figure {
 }
 
 .main-navigation ul {
-  background-color: 0;
-  width: 100%;
+  background-color: #fdc9c9;
   margin: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -212,27 +213,34 @@ figure {
       -ms-flex-direction: column;
           flex-direction: column;
   list-style-type: none;
-  max-height: 0px;
-  height: auto;
+  max-height: 0vh;
+  height: 40vh;
+  width: 100vw;
   -webkit-transition: max-height 1s;
   transition: max-height 1s;
   overflow: hidden;
 }
 
 .main-navigation ul li {
-  margin-top: 5vh;
+  margin-top: 2vh;
+  background-color: #fdc9c9;
   opacity: 0;
   -webkit-transition: opacity .5s;
   transition: opacity .5s;
   -webkit-transition: opacity 1s;
   transition: opacity 1s;
+  margin-left: 20vw;
+}
+
+.main-navigation ul li:last-child {
+  margin-top: 15vh;
 }
 
 .main-navigation ul li a {
   text-decoration: none;
   display: block;
   padding: 2px 2px 2px 2px;
-  color: #13141b;
+  color: gray;
   font-weight: bold;
 }
 
@@ -242,6 +250,17 @@ figure {
 
 .main-navigation ul li a:last-child {
   padding-bottom: 15px;
+}
+
+.main-navigation ul li ul {
+  left: 0;
+  max-height: 10vh;
+}
+
+.main-navigation ul li ul li {
+  margin-left: 5vw;
+  color: gray;
+  opacity: 1;
 }
 
 @media screen and (min-width: 500px) {
@@ -277,6 +296,7 @@ figure {
     padding: 0;
   }
   .main-navigation ul li {
+    margin-top: 5vh;
     opacity: 1;
     -webkit-box-flex: 1;
         -ms-flex: 1;
