@@ -1,30 +1,67 @@
 window.addEventListener("load", function () {
     let collectionBtnNouvelle = document.querySelectorAll(".btnNouvelle");
-    console.log(collectionBtnNouvelle.length)
     if (collectionBtnNouvelle) {
         for (let btn of collectionBtnNouvelle) {
-            console.log(btn.id)
             btn.addEventListener('click', Ajax)
         }
     }
 });
 
 
+
+
 function Ajax(evt) {
-    //attibut visible
+    
+    //  instructions ici
+
+    let id = evt.target.id;
+    let maRequete = new XMLHttpRequest();
+    maRequete.open('GET', 'http://localhost/wordpress/wp-json/wp/v2/posts/' + id); 
+    maRequete.onload = function () {
+        if (maRequete.status >= 200 && maRequete.status < 400) {
+            let data = JSON.parse(maRequete.responseText);
+            // instructions ici
+            creationHTML(data , evt);  // paramètres à ajouter
+        } else {
+            console.log('La connexion est faite mais il y a une erreur')
+        }
+    }
+    maRequete.onerror = function () {
+        console.log("erreur de connexion");
+    }
+    maRequete.send()
+    {
+    }
+
+    // instructions à ajouter
+
+}
+
+function creationHTML(oDataJSON, evt) {
+
+
     let oAffiche = document.querySelector("div[visible='true']");
-
+    let id = oDataJSON.id;
     //Click
-    let oDiv = document.querySelector("div[data-id='" + evt.srcElement.id + "']");
+    let oDiv = document.querySelector("div[data-id='" + id + "']");
 
-    if (this.value == "Voir moins") {
+    let monHtmlString = '<div>';
+        monHtmlString += '<h2>' + oDataJSON.title.rendered + '</h2>';
+        monHtmlString += oDataJSON.content.rendered;
+        monHtmlString += '</div>';
+
+        oDiv.innerHTML += monHtmlString;
+
+    if (evt.value == "Voir moins") {
 
         oDiv.setAttribute("visible", "false");
         oDiv.style.display = "none";
+        oDiv.innerHTML = "";
+        console.log(oDiv.innerHTML);
 
-        this.value = "Lire la suite...";
+        evt.value = "Lire la suite...";
     } else {
-        this.value = "Voir moins";
+        evt.value = "Voir moins";
         oDiv.style.display = "block";
         oDiv.setAttribute("visible", "true");
     }
@@ -32,47 +69,16 @@ function Ajax(evt) {
     if (oAffiche != null) {
         oAffiche.setAttribute("visible", "false");
         oAffiche.style.display = "none";
+        oDiv.innerHTML = "";
+        console.log(oDiv.innerHTML);
 
-        let Button = document.querySelector("input[id='" + oAffiche.getAttribute("data-id") + "']");
-        console.log(Button);
+        let Button = document.querySelector("input[id='" +id + "']");
         Button.value = "Lire la suite...";
     }
-    let maRequete = new XMLHttpRequest();
-
-    maRequete.onload = function () {
-
-        if (maRequete.status >= 200 && maRequete.status < 400) {
-            let oDataJSON = JSON.parse(maRequete.responseText);
-            creationHTML(oDataJSON, oDiv); // paramètres à ajouter
-        } else {
-            console.log('La connexion est faite mais il y a une erreur');
-        }
-    };
-
-    maRequete.open('GET', 'localhost/wordpress/wp-json/wp/v2/posts/' + evt.target.getAttribute("id"));
-    maRequete.send();
 
 
 
-    maRequete.onerror = function () {
-        console.log("erreur de connexion");
-        maRequete.send()
-    }
+    console.log(oDiv.innerHTML);
 
-}
-
-
-//}
-
-function creationHTML(oDataJSON, oDiv) {
-
-    console.log(oDataJSON);
-
-    let monHtmlString = '<div class="postComplet">';
-
-    monHtmlString += '<h2>' + oDataJSON.title.rendered + '</h2>';
-    monHtmlString += oDataJSON.content.rendered;
-    monHtmlString += '</div>';
-
-    oDiv.innerHTML += monHtmlString;
+    
 }

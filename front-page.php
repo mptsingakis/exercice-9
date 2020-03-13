@@ -79,6 +79,10 @@ echo '<div class="evenements"> ';
             echo '<div class="evenementText">';
                  echo '<h3 class="titleSection">' . get_the_title( $query2->post->ID ) . '</h3>';
                 echo '<p class="resumeEvt">' . SUBSTR(get_the_excerpt(),0,300) . '</p>';
+
+                echo  '<input type="button"  class="btnNouvelle" id="'.get_the_ID().'"value="Lire la suite..."></input>';
+                echo  '<div data-id="'.get_the_ID().'" > </div>';//Pour détecter l'état visible
+
             echo '</div>';
         echo '</div>';
     }
