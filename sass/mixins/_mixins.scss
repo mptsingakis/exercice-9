@@ -1,0 +1,10 @@
+@mixin CenterFooter {
+    @content; 
+ }
+ 
+ @include CenterFooter{
+    .site-info{
+        margin-top: 4vh;
+         text-align: center;
+     }
+ }
