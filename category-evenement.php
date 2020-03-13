@@ -12,35 +12,52 @@ get_header();
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
+
+		
 <?php
-        echo '<h1 class="titreSections"> '.category_description( get_category_by_slug( 'evenements' ) ). '</h1>'   ;
+
+	$args = array(
+		"category_name" => "evenement",
+		"posts_per_page" =>-1, //afficher les 3 derniere nouvelles "posts_per_page" => "3"
+		"orderby" =>"date",
+		"order" => "DSC"
+	);
+	$query1 = new WP_Query( $args );
+
+    echo '<h1 class="titreSections"> '.category_description( get_category_by_slug( 'evenements' ) ). '</h1>'   ;
          
-         echo '<div class="evenements">';
+    echo '<div class="evenementsGrid">';
 
-		 if ( have_posts() ) : ?>
+	if ( have_posts() ) : ?>
 
-			<header class="page-header">
-				<?php
+		<header class="page-header">
+			<?php
 			//	the_archive_title( '<h1 class="page-title">', '</h1>' );
 			//	the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
+			?>
 			</header><!-- .page-header -->
 
 			<?php
 			/* Start the Loop */
 
-                while ( have_posts() ) :
-                    the_post();
-                    $mois = get_the_date('m');
-                    $column = ($mois % 3) + 1;
-                    $row = get_the_date('j');
-                    //var_dump($column, $row);
-                    echo'<div class="elm_Evenement" style="grid-area:'.$row.'/'.$column.'">';
+                while ($query1->have_posts()) :
+                    $query1->the_post();
+					$mois = get_the_date('m');
+					$moisActuel = date('m');
+					//echo date('m');
+					if($mois <= $moisActuel) {
+						//echo '<div>'.get_the_title( get_post() ).'  /  '.$mois.'</div>';
+						$column = ($mois % 3) + 1;
+                    	$row = get_the_date('j');
+                    	//var_dump($column, $row);
+                    	echo'<div class="elm_Evenement" style="grid-area:'.$row.'/'.$column.'">';
                         echo '<a href='.get_permalink().'>' . get_the_title( get_post() ) . ' :'; echo get_the_date(' j m y').  '</a>';   
-                    echo '</div>';
+                    	echo '</div>';
+					}
+                    
                    endwhile;
 
-		endif;
+	endif;
 		?>
         </div>
 		</main><!-- #main -->

@@ -399,6 +399,20 @@ a {
   margin-top: -.5%;
 }
 
+.evenementsGrid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 31;
+  grid-row: 31;
+  -ms-grid-column: 3;
+  grid-column: 3;
+  font-size: 1.5em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 55vh;
+}
+
 @media screen and (min-width: 1250px) {
   .resumeNouvelle {
     text-align: center;
