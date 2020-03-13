@@ -317,10 +317,8 @@ a {
   color: black;
 }
 
-.conference {
-  margin-top: 2%;
-  margin-left: 5%;
-  margin-right: 5%;
+.evenements {
+  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -328,17 +326,14 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  width: 80%;
 }
 
-.conferenceText {
+.evenementText {
   padding-left: 20px;
 }
 
-.conference p {
-  font-size: 0.4em;
-}
-
-.conferenceItems {
+.evenementItems {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -349,17 +344,104 @@ a {
   padding-top: 20px;
 }
 
-.titreSections {
-  font-size: 0.9em;
-  margin-left: 2%;
+.resumeEvt {
+  font-size: 0.8em;
+  color: #777474;
 }
 
-.postComplet::before {
-  visibility: visible;
+.resumeNouvelle {
+  font-size: 1.5em;
+  margin-left: 1%;
 }
 
-.postComplet ::after {
-  visibility: hidden;
+.titreSection {
+  margin-left: 8%;
+  margin-top: 10vh;
+  margin-bottom: 3vh;
+  font-size: 1.6em;
+  text-decoration: underline;
+}
+
+.nouvelles {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 3;
+  grid-row: 3;
+  -ms-grid-columns: 200px;
+      grid-template-columns: 200px;
+  color: #777474;
+  font-size: 0.7em;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-left: -40vw;
+}
+
+.nouvelleText {
+  background-color: white;
+  width: 60vw;
+  height: 20vh;
+  margin-top: 5vh;
+  border-radius: 1em;
+}
+
+.nouvelleText h3 {
+  font-size: 2em;
+  margin-left: 1%;
+}
+
+.sectionNouvelles {
+  background-color: #fdc9c9;
+  height: 100vh;
+  padding: 1%;
+}
+
+.sectionNouvelles h2 {
+  margin-top: -.5%;
+}
+
+.evenementsGrid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 31;
+  grid-row: 31;
+  -ms-grid-column: 3;
+  grid-column: 3;
+  font-size: 1.5em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 55vh;
+}
+
+@media screen and (min-width: 1250px) {
+  .resumeNouvelle {
+    text-align: center;
+  }
+  .nouvelles {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-row: 1;
+    grid-row: 1;
+    -ms-grid-columns: 200px 200px 200px;
+        grid-template-columns: 200px 200px 200px;
+    font-size: 0.7em;
+    margin-left: -8vw;
+  }
+  .nouvelleText {
+    width: 22.5vw;
+    height: 30vh;
+  }
+  .nouvelleText h3 {
+    font-size: 2em;
+    text-align: center;
+  }
+  .sectionNouvelles {
+    height: 50vh;
+  }
+}
+
+.entry-footer, .edit-link {
+  display: none !important;
 }
 
 /*--------------------------------------------------------------
@@ -368,4 +450,21 @@ a {
 /*--------------------------------------------------------------
 # Entete
 --------------------------------------------------------------*/
+.wp-block-image img {
+  width: 100%;
+}
+
+.entry-title {
+  position: absolute;
+  color: white;
+  font-size: 7em;
+  margin-top: 1vh;
+}
+
+@media screen and (min-width: 1250px) {
+  .entry-title {
+    margin-top: 80vh;
+    font-size: 10em;
+  }
+}
 /*# sourceMappingURL=style.css.map */
