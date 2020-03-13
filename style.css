@@ -601,7 +601,17 @@ a {
 # Widgets
 --------------------------------------------------------------*/
 .site-info {
-  background-color: gray;
+  background-color: #bbb8b8;
+  height: 5vh;
+  width: 100vw;
+  margin-top: 4vh;
+  text-align: center;
+  padding-top: 1.3vh;
+}
+
+.site-info a {
+  color: black;
+  font-size: large;
 }
 
 /*--------------------------------------------------------------
