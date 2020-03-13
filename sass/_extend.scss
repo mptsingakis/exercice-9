@@ -1,0 +1,12 @@
+.font-style{
+    color:$color_font_grey;
+    font-weight: lighter;
+}
+
+.resumeNouvelle {
+    @extend .font-style;
+}
+
+.resumeEvt{
+    @extend .font-style;
+}
