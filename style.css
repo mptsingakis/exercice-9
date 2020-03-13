@@ -504,6 +504,19 @@ a {
   color: #fdc9c9;
 }
 
+.evtDesContent {
+  color: black;
+  margin-top: 30vh;
+  margin-left: 7vw;
+}
+
+.entry-header > .evtDesTitle {
+  color: #fdc9c9;
+  margin-top: 12vh;
+  margin-left: 3vw;
+  font-size: 5em;
+}
+
 @media screen and (min-width: 700px) {
   .evenementsGrid {
     width: 70vw;
