@@ -81,6 +81,9 @@ a{
 		font-size: 2em;
 		margin-left: 1%;
 	}
+	&:hover{
+		animation: scaleUp 1s;
+	}
 }
 
 .sectionNouvelles {
@@ -195,6 +198,14 @@ a{
 	}
 
 }
-.entry-footer, .edit-link{
-	display: none !important; 
-}
+
+
+@keyframes scaleUp {
+	0% {
+	  transform: scale(0.5);
+	}
+	100% {
+	  transform: scale(1);
+	}
+  }
+

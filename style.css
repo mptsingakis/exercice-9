@@ -95,6 +95,10 @@ figure {
   /* Extra wide images within figure tags don't overflow the content area. */
 }
 
+.entry-footer, .edit-link {
+  display: none !important;
+}
+
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
@@ -455,6 +459,11 @@ a {
   margin-left: 1%;
 }
 
+.nouvelleText:hover {
+  -webkit-animation: scaleUp 1s;
+          animation: scaleUp 1s;
+}
+
 .sectionNouvelles {
   background-color: #fdc9c9;
   height: 100vh;
@@ -566,8 +575,26 @@ a {
   }
 }
 
-.entry-footer, .edit-link {
-  display: none !important;
+@-webkit-keyframes scaleUp {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes scaleUp {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 
 /*--------------------------------------------------------------
@@ -589,6 +616,38 @@ a {
   color: white;
   font-size: 7em;
   margin-top: 1vh;
+  -webkit-animation: flipTitre infinite 2s;
+          animation: flipTitre infinite 2s;
+}
+
+@-webkit-keyframes flipTitre {
+  0% {
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+  }
+  50% {
+    -webkit-transform: rotateX(-180deg);
+            transform: rotateX(-180deg);
+  }
+  100% {
+    -webkit-transform: rotateX(-360deg);
+            transform: rotateX(-360deg);
+  }
+}
+
+@keyframes flipTitre {
+  0% {
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+  }
+  50% {
+    -webkit-transform: rotateX(-180deg);
+            transform: rotateX(-180deg);
+  }
+  100% {
+    -webkit-transform: rotateX(-360deg);
+            transform: rotateX(-360deg);
+  }
 }
 
 @media screen and (min-width: 1250px) {

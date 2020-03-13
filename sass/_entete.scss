@@ -7,6 +7,19 @@
     color: white;
     font-size: 7em;
     margin-top: 1vh;
+    animation:  flipTitre infinite 2s;
+}
+
+@keyframes flipTitre {
+    0% {
+      transform: rotateX(0);
+    }
+    50% {
+      transform: rotateX(-180deg);
+    }
+    100%{
+        transform: rotateX(-360deg);
+    }
 }
 
 @media screen and (min-width: 1250px){
