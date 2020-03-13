@@ -1,11 +1,14 @@
-body,
-button,
-input,
-select,
-optgroup,
-textarea {
-	font-family: $font__main;
-	
-	line-height: $font__line-height-body;
+@import url(https://fonts.googleapis.com/css?family=Montserrat&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap);
+
+// Font Variables
+$font-titre: 'Montserrat';
+$font-texte: 'Open Sans Condensed';
+
+h1, header{
+    font-family: $font-titre;
 }
 
+p , a{
+    font-family: $font-texte;
+}

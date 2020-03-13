@@ -40,20 +40,30 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 # miximns
 --------------------------------------------------------------*/
+@import url(https://fonts.googleapis.com/css?family=Montserrat&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap);
+.site-info {
+  margin-top: 4vh;
+  text-align: center;
+}
+
 /*--------------------------------------------------------------
 # extend
 --------------------------------------------------------------*/
+.font-style, .resumeNouvelle, .resumeEvt {
+  color: gray;
+  font-weight: lighter;
+}
+
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
-body,
-button,
-input,
-select,
-optgroup,
-textarea {
-  font-family: sans-serif;
-  line-height: 1.5;
+h1, header {
+  font-family: "Montserrat";
+}
+
+p, a {
+  font-family: "Open Sans Condensed";
 }
 
 /*--------------------------------------------------------------
@@ -416,7 +426,6 @@ a {
 
 .resumeEvt {
   font-size: 0.8em;
-  color: gray;
 }
 
 .resumeNouvelle {
@@ -604,8 +613,6 @@ a {
   background-color: #bbb8b8;
   height: 5vh;
   width: 100vw;
-  margin-top: 4vh;
-  text-align: center;
   padding-top: 1.3vh;
 }
 
