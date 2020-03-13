@@ -50,8 +50,11 @@ get_header();
 						$column = ($mois % 3) + 1;
                     	$row = get_the_date('j');
                     	//var_dump($column, $row);
-                    	echo'<div class="elm_Evenement" style="grid-area:'.$row.'/'.$column.'">';
-                        echo '<a href='.get_permalink().'>' . get_the_title( get_post() ) . ' :'; echo get_the_date(' j m y').  '</a>';   
+						echo'<div class="elm_Evenement" style="grid-area:'.$row.'/'.$column.'">';
+						echo'<p>'.get_the_title( get_post() ).'</p>';
+						echo '<a href='.get_permalink().'>Voir l\'évènement</a>';
+						echo '<p>'.get_the_date(' j / m / y').'</p>';   
+						
                     	echo '</div>';
 					}
                     

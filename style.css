@@ -52,7 +52,6 @@ input,
 select,
 optgroup,
 textarea {
-  color: #404040;
   font-family: sans-serif;
   line-height: 1.5;
 }
@@ -79,7 +78,6 @@ body {
 }
 
 hr {
-  background-color: #ccc;
   border: 0;
   height: 1px;
   margin-bottom: 1.5em;
@@ -188,7 +186,7 @@ figure {
 }
 
 .main-navigation {
-  height: 5vh;
+  height: 8vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -414,7 +412,7 @@ a {
 
 .resumeEvt {
   font-size: 0.8em;
-  color: #777474;
+  color: gray;
 }
 
 .resumeNouvelle {
@@ -437,7 +435,7 @@ a {
   grid-row: 3;
   -ms-grid-columns: 200px;
       grid-template-columns: 200px;
-  color: #777474;
+  color: gray;
   font-size: 0.7em;
   -ms-flex-pack: distribute;
       justify-content: space-around;
@@ -445,7 +443,7 @@ a {
 }
 
 .nouvelleText {
-  background-color: white;
+  background-color: #fff;
   width: 60vw;
   height: 20vh;
   margin-top: 5vh;
@@ -467,27 +465,65 @@ a {
   margin-top: -.5%;
 }
 
+.titreSections {
+  margin-top: 10vh;
+  margin-left: 10vw;
+  font-size: 1.7em;
+}
+
 .evenementsGrid {
+  margin: 0 auto;
   display: -ms-grid;
   display: grid;
   -ms-grid-row: 31;
   grid-row: 31;
   -ms-grid-column: 3;
   grid-column: 3;
-  font-size: 1.5em;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  height: 55vh;
+  width: 100vw;
+  font-size: 0.9em;
+  height: 175vh;
+  background-color: #cdcdcd;
+  border-radius: 1em;
 }
 
-@media screen and (min-width: 500px) {
+.elm_Evenement {
+  margin: 0 auto;
+  background-color: #fff;
+  margin-top: 1vh;
+  border-radius: 1em;
+  width: 30vw;
+  height: 17vh;
+  text-align: center;
+}
+
+.elm_Evenement p {
+  margin: 0.2vh;
+}
+
+.elm_Evenement a:hover {
+  color: #fdc9c9;
+}
+
+@media screen and (min-width: 700px) {
+  .evenementsGrid {
+    width: 70vw;
+    font-size: 1.5em;
+    height: 150vh;
+  }
+  .titreSections {
+    margin-left: 5vw;
+  }
   .resumeNouvelle {
     font-size: 1.5em;
   }
+  .elm_Evenement {
+    font-size: 0.7em;
+    width: 20vw;
+    height: 12vh;
+  }
 }
 
-@media screen and (min-width: 1250px) {
+@media screen and (min-width: 1000px) {
   .resumeNouvelle {
     text-align: center;
   }
@@ -512,6 +548,9 @@ a {
   .sectionNouvelles {
     height: 50vh;
   }
+  .elm_Evenement {
+    font-size: 1em;
+  }
 }
 
 .entry-footer, .edit-link {
@@ -521,6 +560,11 @@ a {
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
+.site-info {
+  margin: 0 auto;
+  text-decoration: none;
+}
+
 /*--------------------------------------------------------------
 # Entete
 --------------------------------------------------------------*/

@@ -92,23 +92,65 @@ a{
 	}
 }
 
+.titreSections {
+	margin-top: 10vh;
+	margin-left: 10vw;
+	font-size: 1.7em;
+}
+
 .evenementsGrid{
+	margin: 0 auto;
 	display: grid;
 	grid-row:31;
 	grid-column: 3;
-	font-size: 1.5em;
-	justify-content: center;
-	height: 55vh;
-
+	width: 100vw;
+	font-size: 0.9em;
+	height: 175vh;
+	background-color: lighten($color_font_grey, 30);
+	border-radius: 1em;
 }
+.elm_Evenement{
+	margin: 0 auto;
+	background-color: $color_white;
+	margin-top: 1vh;
+	border-radius: 1em;
+	width: 30vw;
+	height: 17vh;
+	text-align: center;
 
-@media screen and (min-width:500px) {
-	.resumeNouvelle{
-		font-size:1.5em;
+	p{
+		margin: 0.2vh;
+	}
+
+	a:hover {
+		color: $color_back_rose;
 	}
 }
 
-@media screen and (min-width: 1250px) {
+@media screen and (min-width:700px) {
+	
+	.evenementsGrid {
+		width: 70vw;
+		font-size: 1.5em;
+		height: 150vh;
+	}
+
+	.titreSections {
+		margin-left: 5vw;
+	}
+
+	.resumeNouvelle{
+		font-size:1.5em;
+	}
+
+	.elm_Evenement{
+		font-size:0.7em;
+		width: 20vw;
+		height: 12vh;
+	}
+}
+
+@media screen and (min-width: 1000px) {
 
 	.resumeNouvelle{
 		text-align: center;
@@ -134,6 +176,10 @@ a{
 
 	.sectionNouvelles {
 		height: 50vh;
+	}
+
+	.elm_Evenement{
+		font-size:1em;
 	}
 
 }
