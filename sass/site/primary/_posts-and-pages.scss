@@ -24,7 +24,7 @@
 
 a{
 	font-size: 0.65em;
-	color: black;
+	color: $color_black;
 }
 //Titre des sections nouvelle, conférence
 
@@ -47,10 +47,10 @@ a{
 }
 .resumeEvt{
 	font-size: 0.8em;
-	color:rgb(119, 116, 116) ;
+	color:$color_font_grey ;
 }
 .resumeNouvelle{
-	font-size:1.5em;
+	font-size:1em;
 	margin-left: 1%;
 }
 .titreSection{
@@ -64,7 +64,7 @@ a{
 		display: grid;
 		grid-row: 3;
 		grid-template-columns: 200px ;
-		color:rgb(119, 116, 116) ;
+		color:$color_font_grey;
 		font-size: 0.7em;
 		justify-content: space-around;
 		margin-left: -40vw;
@@ -72,7 +72,7 @@ a{
 }
 
 .nouvelleText {
-	background-color: white;
+	background-color: $color_white;
 	width: 60vw;
 	height: 20vh;
 	margin-top: 5vh;
@@ -84,7 +84,7 @@ a{
 }
 
 .sectionNouvelles {
-	background-color: rgb(253, 201, 201);
+	background-color: $color_back_rose;
 	height: 100vh;
 	padding: 1%;
 	h2 {
@@ -100,6 +100,12 @@ a{
 	justify-content: center;
 	height: 55vh;
 
+}
+
+@media screen and (min-width:500px) {
+	.resumeNouvelle{
+		font-size:1.5em;
+	}
 }
 
 @media screen and (min-width: 1250px) {
