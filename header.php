@@ -45,7 +45,14 @@
             ?>
 		</div><!-- .site-branding -->
 		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'underscore' ); ?></button>
+			<!--button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><!?php esc_html_e( 'Primary Menu', 'underscore' ); ?></button-->
+			<input type="checkbox" id="chkBoutonBurger">
+                <label for="chkBoutonBurger" class="boutonBurger">
+                    <div class="ligne"></div>
+                    <div class="ligne"></div>
+                    <div class="ligne"></div>	
+                </label>
+			
 			<?php
 			wp_nav_menu( array(
 				'theme_location' => 'menu-1',
